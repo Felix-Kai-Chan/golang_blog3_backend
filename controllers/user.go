@@ -101,7 +101,7 @@ func (uc *UsersController) UpdateUser(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"data": user})
 }
 
-// ✅ 補全 DeleteUser（關鍵！）
+// 補全 DeleteUser（關鍵！）
 func (uc *UsersController) DeleteUser(c *gin.Context) {
 	id, err := strconv.Atoi(c.Param("id"))
 	if err != nil {

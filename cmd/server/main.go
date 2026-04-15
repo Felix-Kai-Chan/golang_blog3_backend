@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"golang_blog3/config"
 	"golang_blog3/middleware"
 	"golang_blog3/routes"
@@ -19,11 +18,8 @@ func main() {
 	// 设置应用路由（包含公开路由和受保护路由）
 	r = routes.SetupRouter()
 
-	// 添加 Prometheus 指标监控端点
 	// 用于监控系统性能，此路由无需认证
 	r.GET("/metrics", middleware.MetricsHandler())
-
-	fmt.Println("Hello, GitHub!")
 
 	// 启动 Web 服务器，监听 8080 端口
 	// 服务器将处理所有路由（包括公开路由、受保护路由和监控路由）
