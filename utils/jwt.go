@@ -37,9 +37,6 @@ func GenerateToken(user models.User) (string, error) {
 }
 
 // ValidateToken 解析 JWT Token，验证其有效性并返回 Claims
-
-// ParseToken 解析 JWT Token，验证其有效性并返回 Claims
-
 func ValidateToken(tokenString string) (*Claims, error) {
 	claims := &Claims{}
 	token, err := jwt.ParseWithClaims(tokenString, claims, func(token *jwt.Token) (interface{}, error) {
